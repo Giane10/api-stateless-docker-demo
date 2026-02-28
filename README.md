@@ -1,42 +1,50 @@
-🚀 API Stateless & Cloud Migration Demo
-Este projeto é um protótipo funcional desenvolvido para o Demo Day do Grupo 3 (Curso Avanti). Ele demonstra a transição de uma infraestrutura física instável para uma arquitetura resiliente em nuvem.
+# 🚀 API Stateless & Cloud Migration Demo
 
-📋 Sobre o Projeto
+Este projeto é um protótipo funcional desenvolvido para o **Demo Day do Grupo 3 (Curso Avanti)**. Ele demonstra a transição de uma infraestrutura física instável para uma arquitetura resiliente em nuvem.
+
+## 📋 Sobre o Projeto
 O objetivo é validar a eficácia da conteinerização e dos princípios REST na resolução de problemas críticos de TI, como o tempo de inatividade (downtime) e custos elevados de manutenção.
 
-Tecnologias Utilizadas:
-Python & FastAPI: Para a criação de uma API de alto desempenho e arquitetura Stateless (sem retenção de lixo no servidor).
+### Tecnologias Utilizadas:
+* **Python & FastAPI**: Para a criação de uma API de alto desempenho e arquitetura Stateless (sem retenção de lixo no servidor).
+* **Docker**: Utilizado como "Receita Universal" para garantir a padronização e portabilidade do ambiente
+* **HTML/JavaScript**: Interface interativa para simulação de falhas e recuperação em tempo real.
 
-Docker: Utilizado como "Receita Universal" para garantir a padronização e portabilidade do ambiente.
+---
 
-HTML/JavaScript: Interface interativa para simulação de falhas e recuperação em tempo real.
+## 🏗️ Como a Solução Funciona
+### O Problema (Legado)
+Servidores físicos são frágeis. Se o hardware falha, o negócio para.
+### A Solução (Docker): 
+O código é empacotado em um container. O **Dockerfile** permite recriar o servidor inteiro em segundos caso ocorra um erro.
+### Resiliência na Nuvem:
+Através da simulação, demonstramos como a **AWS** e a elasticidade permitem que o sistema volte ao ar instantaneamente após uma falha.
 
-🏗️ Como a Solução Funciona
-O Problema (Legado): Servidores físicos são frágeis. Se o hardware falha, o negócio para.
+---
 
-A Solução (Docker): O código é empacotado em um container. O Dockerfile permite recriar o servidor inteiro em segundos caso ocorra um erro.
-
-Resiliência na Nuvem: Através da simulação, demonstramos como a AWS e a elasticidade permitem que o sistema volte ao ar instantaneamente após uma falha.
-
-🛠️ Como Executar a Demonstração
+### 🛠️ Como Executar a Demonstração
 Para rodar este projeto localmente e ver a "mágica" acontecer:
 
-Certifique-se de ter o Docker instalado.
+1. Certifique-se de ter o Docker instalado.
+2. Construa a imagem:
 
-Construa a imagem:
-
-Bash
+```bash
 docker build -t api-stateless-demo .
-Suba o container:
+```
 
-Bash
+3. Suba o container:
+
+```Bash
 docker run -p 8000:8000 api-stateless-demo
-Acesse no navegador: http://localhost:8000
+```
 
-📈 Impacto no Negócio
-Alta Disponibilidade: O sistema se torna imune a falhas de hardware local.
+2. Acesse no navegador: http://localhost:8000
 
-Escalabilidade Horizontal: A arquitetura permite atender milhares de requisições simultâneas.
+## 📈 Impacto no Negócio
 
-Entrega Contínua (CI/CD): Preparado para esteiras de automação que garantem segurança antes da produção.
-
+### Alta Disponibilidade: 
+O sistema se torna imune a falhas de hardware local. 
+### Escalabilidade Horizontal: 
+A arquitetura permite atender milhares de requisições simultâneas. 
+### Entrega Contínua (CI/CD): 
+Preparado para esteiras de automação que garantem segurança antes da produção.
