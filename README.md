@@ -38,7 +38,7 @@ docker build -t api-stateless-demo .
 docker run -p 8000:8000 api-stateless-demo
 ```
 
-2. Acesse no navegador: http://localhost:8000
+4. Acesse no navegador: http://localhost:8000
 
 ## 📈 Impacto no Negócio
 
