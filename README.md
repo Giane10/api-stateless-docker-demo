@@ -1,6 +1,6 @@
 # 🚀 API Stateless & Cloud Migration Demo
 
-Este projeto é um protótipo funcional desenvolvido para o **Demo Day do Grupo 3 (Curso Avanti)**. Ele demonstra a transição de uma infraestrutura física instável para uma arquitetura resiliente em nuvem.
+Este projeto é um protótipo funcional desenvolvido para o **Demo Day da 🚀 squad-3 (Curso Avanti)**. Ele demonstra a transição de uma infraestrutura física instável para uma arquitetura resiliente em nuvem.
 
 ## 📋 Sobre o Projeto
 O objetivo é validar a eficácia da conteinerização e dos princípios REST na resolução de problemas críticos de TI, como o tempo de inatividade (downtime) e custos elevados de manutenção.
@@ -26,19 +26,25 @@ Através da simulação, demonstramos como a **AWS** e a elasticidade permitem q
 Para rodar este projeto localmente e ver a "mágica" acontecer:
 
 1. Certifique-se de ter o Docker instalado.
-2. Construa a imagem:
+
+#### Opção 1: Via Docker Compose (Recomendado)
+Basta um comando para subir a infraestrutura completa:
+
+```bash
+docker-compose up --build
+```
+
+#### Opção 2: Via Docker Manual
+Caso prefira os comandos individuais:
 
 ```bash
 docker build -t api-stateless-demo .
-```
-
-3. Suba o container:
-
-```Bash
 docker run -p 8000:8000 api-stateless-demo
 ```
 
-2. Acesse no navegador: http://localhost:8000
+3. Acesse no navegador: http://localhost:8000
+
+---
 
 ## 📈 Impacto no Negócio
 
@@ -48,3 +54,5 @@ O sistema se torna imune a falhas de hardware local.
 A arquitetura permite atender milhares de requisições simultâneas. 
 ### Entrega Contínua (CI/CD): 
 Preparado para esteiras de automação que garantem segurança antes da produção.
+
+---
