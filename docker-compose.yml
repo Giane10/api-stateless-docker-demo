@@ -1,0 +1,14 @@
+version: '3.8'
+
+services:
+  # Nome do serviço 
+  minha-api:
+    # O ponto (.) diz ao Docker para usar o Dockerfile da pasta atual
+    build: .
+    # Define o nome da imagem que será criada
+    image: app-resiliente-img:latest
+    # Mapeia a porta da máquina para a porta do container
+    ports:
+      - "8000:8000"
+    # O container reinicia sozinho se houver uma falha leve
+    restart: always
