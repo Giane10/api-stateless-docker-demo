@@ -7,54 +7,72 @@ O objetivo é validar a eficácia da conteinerização e dos princípios REST na
 
 ### Tecnologias Utilizadas:
 * **Python & FastAPI**: Para a criação de uma API de alto desempenho e arquitetura Stateless (sem retenção de lixo no servidor).
-* **Docker**: Utilizado como "Receita Universal" para garantir a padronização e portabilidade do ambiente
+* **Docker & Docker Compose:**: Utilizado como "Receita Universal" para padronização, isolamento e portabilidade do ambiente.
+* **GitHub Actions:**: : Esteira de CI/CD para automação de build, testes e entrega contínua.
 * **HTML/JavaScript**: Interface interativa para simulação de falhas e recuperação em tempo real.
 
 ---
 
 ## 🏗️ Como a Solução Funciona
-### O Problema (Legado)
-Servidores físicos são frágeis. Se o hardware falha, o negócio para.
-### A Solução (Docker): 
-O código é empacotado em um container. O **Dockerfile** permite recriar o servidor inteiro em segundos caso ocorra um erro.
-### Resiliência na Nuvem:
-Através da simulação, demonstramos como a **AWS** e a elasticidade permitem que o sistema volte ao ar instantaneamente após uma falha.
+
+### 🔴 O Problema (Legado)
+Servidores físicos são pontos únicos de falha. Se o hardware falha, o serviço é interrompido, gerando prejuízos financeiros e operacionais.
+
+### 🟢 A Solução (Modernização)
+
+### Conteinerização:
+O código é empacotado via **Dockerfile**, permitindo que o servidor seja recriado em segundos em qualquer provedor de nuvem.
+### Resiliência (Self-healing):
+O sistema utiliza políticas de reinicialização automática.
+### Cloud Ready: 
+A arquitetura permite que a AWS escale a aplicação horizontalmente conforme a demanda.
 
 ---
 
-### 🛠️ Como Executar a Demonstração
+## 🛠️ Como Executar a Demonstração
 Para rodar este projeto localmente e ver a "mágica" acontecer:
 
-1. Certifique-se de ter o Docker instalado.
+### 1. Pré-requisitos
+Docker e Docker Compose instalados.
 
-#### Opção 1: Via Docker Compose (Recomendado)
-Basta um comando para subir a infraestrutura completa:
+### 2. Subindo a infraestrutura
+Basta um comando para construir a imagem e iniciar o serviço:
 
 ```bash
 docker-compose up --build
 ```
 
-#### Opção 2: Via Docker Manual
-Caso prefira os comandos individuais:
-
-```bash
-docker build -t api-stateless-demo .
-docker run -p 8000:8000 api-stateless-demo
-```
-
-3. Acesse no navegador: http://localhost:8000
+### 3. Acessando o Dashboard
+Abra o navegador em: http://localhost:8000
 
 ---
+
+###     Guia de Teste:
+Simular Falha Física:
+Altera o estado da API para "Unhealthy" e muda a interface para o modo crítico (🚨).
+Restaurar via Cloud:
+Simula a recuperação automática do ambiente Docker, devolvendo a estabilidade ao sistema (✅).
+
+---
+
+### ⚙️ Esteira de CI/CD
+O projeto conta com um workflow automatizado via GitHub Actions que executa:
+
+### 1. Build & Test:
+Valida o código Python e as dependências.
+
+### 2. Docker Delivery:
+Realiza o login no Docker Hub, gera a imagem oficial e faz o push automaticamente para o repositório da squad.
 
 ---
 
 ## 📈 Impacto no Negócio
 
 ### Alta Disponibilidade: 
-O sistema se torna imune a falhas de hardware local. 
-### Escalabilidade Horizontal: 
+Sistema imune a falhas de hardware local.
+### Escalabilidade: 
 A arquitetura permite atender milhares de requisições simultâneas. 
-### Entrega Contínua (CI/CD): 
-Preparado para esteiras de automação que garantem segurança antes da produção.
+### Segurança Operacional: 
+Garantia de que apenas códigos validados pela esteira de CI/CD cheguem ao ambiente de produção.
 
 ---
