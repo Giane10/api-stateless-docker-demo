@@ -48,9 +48,9 @@ Abra o navegador em: http://localhost:8000
 ---
 
 ###     Guia de Teste:
-Simular Falha Física:
+* **Simular Falha Física:**
 Altera o estado da API para "Unhealthy" e muda a interface para o modo crítico (🚨).
-Restaurar via Cloud:
+* **Restaurar via Cloud:**
 Simula a recuperação automática do ambiente Docker, devolvendo a estabilidade ao sistema (✅).
 
 ---
@@ -76,3 +76,20 @@ A arquitetura permite atender milhares de requisições simultâneas.
 Garantia de que apenas códigos validados pela esteira de CI/CD cheguem ao ambiente de produção.
 
 ---
+
+## 🤝 Créditos e Agradecimentos
+
+Este projeto foi desenvolvido como parte integrante das atividades do **Bootcamp Avanti**, um programa focado na formação de excelência em tecnologia e cultura DevOps.
+
+### 👥 Equipe (Squad-3):
+* **Giane Costa**: Desenvolvimento da API Stateless (Python/FastAPI), Arquitetura de Conteinerização (Docker) e Interface Visual.
+* **Barbara Martins**: Implementação da Esteira de CI/CD (GitHub Actions) e Automação de Workflows.
+
+### 🎓 Corpo Docente e Mentoria:
+Um agradecimento especial aos profissionais que guiaram este aprendizado:
+* **Professor**: Thiago Ozores (Zozô), pelas orientações técnicas e visão de arquitetura.
+* **Facilitadores**: José Roberto e André Revoredo, pelo suporte contínuo e mediação do conhecimento.
+
+---
+*Desenvolvido com foco em resiliência e alta disponibilidade para o Demo Day 2026.1.*
+
